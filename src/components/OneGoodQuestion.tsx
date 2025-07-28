@@ -107,7 +107,7 @@ const OneGoodQuestion = () => {
         variant={'primary'}
         size={'lg'}
       >
-        Give Me One Good Question
+        Ask the system
       </Button>
 
       <Card className="max-w-2xl w-full p-6 text-lg shadow-xl">
