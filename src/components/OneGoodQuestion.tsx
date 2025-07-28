@@ -33,7 +33,7 @@ const OneGoodQuestion = () => {
     'Government Digital Service (GDS) Framework': [
       'Are we starting with user needs, not government needs?',
       'Is our service simple enough for everyone to use the first time?',
-      'Have we shown the thing we\'re building early and often?',
+      "Have we shown the thing we're building early and often?",
       'Are we using agile methods to iterate quickly?',
       'Are we building the right thing before building it right?',
       'Are we continuously learning from real user behavior?',
@@ -130,13 +130,14 @@ const OneGoodQuestion = () => {
       <Button
         className="text-xl md:text-2xl px-12 py-6 mb-10 rounded-full shadow-lg font-bold text-white hover:scale-105 transition-transform active:scale-100"
         style={{
-          background: 'radial-gradient(circle, #1e40af 30%, #059669 50%, #1e40af 100%)'
+          background:
+            'radial-gradient(circle, #1e40af 30%, #059669 50%, #1e40af 100%)',
         }}
         onClick={showRandomQuestion}
         variant={'primary'}
         size={'lg'}
       >
-        Ask the system
+        Remix the system
       </Button>
 
       <Card className="max-w-2xl w-full p-6 text-lg shadow-xl">
