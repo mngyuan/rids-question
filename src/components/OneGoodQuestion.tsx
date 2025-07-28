@@ -100,7 +100,7 @@ const OneGoodQuestion = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#fdf9f3] px-4 text-center text-[#1e1e1e]">
+    <div className="grow flex flex-col items-center justify-center bg-[#fdf9f3] px-4 text-center text-[#1e1e1e]">
       <Button
         className="text-xl md:text-2xl px-12 py-6 mb-10 rounded-full shadow-lg font-bold bg-[#1e1e1e] text-white hover:scale-105 transition-transform"
         onClick={showRandomQuestion}
