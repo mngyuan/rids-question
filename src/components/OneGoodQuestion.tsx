@@ -104,12 +104,14 @@ const OneGoodQuestion = () => {
       <Button
         className="text-xl md:text-2xl px-12 py-6 mb-10 rounded-full shadow-lg font-bold bg-[#1e1e1e] text-white hover:scale-105 transition-transform"
         onClick={showRandomQuestion}
+        variant={'primary'}
+        size={'lg'}
       >
         Give Me One Good Question
       </Button>
 
       <Card className="max-w-2xl w-full p-6 text-lg shadow-xl">
-        <CardContent>
+        <CardContent className="">
           {questionData.category && (
             <div className="text-sm text-gray-500 mb-2">
               🧠 {questionData.category}
