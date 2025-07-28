@@ -5,76 +5,102 @@ import {Button} from '@/components/ui/button';
 import {Card, CardContent} from '@/components/ui/card';
 
 const OneGoodQuestion = () => {
-  const sources = {
-    'Systemic Design': 'Source: Design Council Systemic Design Framework',
-    'GDS Service Standard': 'Source: UK Government Design Principles',
-    'Accessibility (WCAG 2)': 'Source: WCAG 2.1 Guidelines',
-    Sustainability: 'Source: Sustainable Design Toolkit (adapted)',
-    'Design Justice': 'Source: Design Justice Network Principles',
-    'Trauma-Informed Design': 'Source: Chayn – Trauma-Informed Design Guide',
+  const getCategoryEmoji = (category) => {
+    const emojiMap = {
+      'Design Council Systemic Framework': '🌐',
+      'Government Digital Service (GDS) Framework': '💻',
+      'WCAG 2 Accessibility Standards': '♿',
+      'Digital Scotland Service Standard (DSSS)': '🏴',
+      'Welsh Future Generations Framework': '🐉',
+      'Placemaking Wales Guide': '🏡',
+      'Scottish Place Principle': '🏴‍☠️',
+      'Sustainable Design Frameworks': '🌱',
+      'Trauma-Informed Design': '🧠',
+      'Design Justice Principles': '⚖️',
+    };
+    return emojiMap[category] || '📋';
   };
 
   const questions = {
-    'Systemic Design': [
-      'Whose perspective is missing from the design process right now?',
-      'What power is reinforcing the current state? Who benefits if nothing changes?',
-      'Where are we intervening in the system — symptoms, causes, or structures?',
-      'What’s trying to emerge in this system that we keep overriding?',
-      'If we paused to zoom out, what patterns would we see repeating?',
-      'What interdependencies are we ignoring or over-simplifying?',
-      'Are we working on part of the problem, or the whole?',
-      'Who holds invisible knowledge that isn’t currently shaping our decisions?',
-      'What unintended consequences might ripple from this solution?',
+    'Design Council Systemic Framework': [
+      'What interdependencies exist between the people, places, and systems involved?',
+      'Have we fully explored the root causes, not just the symptoms?',
+      'How might we engage with those most affected by the problem in the design process?',
+      'Where are the hidden leverage points for systemic change?',
+      'How does this problem connect to wider societal patterns?',
+      'What unintended consequences could emerge from our intervention?',
     ],
-    'GDS Service Standard': [
-      'Are we meeting a real user need, or a bureaucratic assumption?',
-      'What part of this service would confuse someone in crisis?',
-      'Is our language clear, compassionate, and free of jargon?',
-      'Can this journey be completed quickly by someone with low digital confidence?',
-      'Are we learning from data — or just proving what we already believe?',
-      'Are we designing for the whole service, end-to-end?',
-      'Are we iterating quickly enough to learn from real users?',
-      'Are we collaborating with the right people across government or delivery chains?',
+    'Government Digital Service (GDS) Framework': [
+      'Are we starting with user needs, not government needs?',
+      'Is our service simple enough for everyone to use the first time?',
+      'Have we shown the thing we\'re building early and often?',
+      'Are we using agile methods to iterate quickly?',
+      'Are we building the right thing before building it right?',
+      'Are we continuously learning from real user behavior?',
     ],
-    'Accessibility (WCAG 2)': [
-      'Can this be understood without seeing, hearing, or speaking?',
-      'Can this be used with a screen reader, keyboard-only, or on a mobile device?',
-      'Are we assuming any physical, sensory, or cognitive norms?',
-      'Have we tested this with people with lived experience of exclusion?',
-      'Is the design consistent and navigable at every step?',
-      'Does our colour contrast meet WCAG AA standards?',
-      'Have we provided text alternatives for all non-text content?',
-      'Can users navigate this without time pressure or flashing elements?',
+    'WCAG 2 Accessibility Standards': [
+      'Can all users, regardless of ability, perceive and understand this design?',
+      'Is our interface operable without a mouse or touchscreen?',
+      'Have we used consistent navigation and predictable interactions?',
+      'Are we avoiding sensory or color-only communication cues?',
+      'Is content adaptable to different formats or devices?',
+      'Have we tested accessibility with users who rely on assistive tech?',
     ],
-    Sustainability: [
-      'Does this design minimise unnecessary data, devices, or carbon?',
-      'What would this look like if it had to work for 10 years?',
-      'Could we build this using existing parts instead of reinventing?',
-      'Is this emotionally sustainable for the team and the user?',
-      'What harm might we be exporting to another part of the system or planet?',
-      'Are we accounting for lifecycle cost — not just development cost?',
-      'How would this service adapt under climate stress or energy constraints?',
-      'Can this solution scale without exhausting people or the planet?',
+    'Digital Scotland Service Standard (DSSS)': [
+      'How does this design meet the needs of diverse Scottish users?',
+      'Are we working in the open and iterating based on feedback?',
+      'Are we building on existing good practice and avoiding duplication?',
+      'How have we built inclusion into every stage of the process?',
+      'Are we publishing work openly to support wider use and improvement?',
+      'Are we supporting long-term public benefit, not just short-term gains?',
     ],
-    'Design Justice': [
-      'Who is included in the design process and who is excluded?',
-      'Are we redistributing power or reinforcing existing hierarchies?',
-      'Are we co-creating with those most impacted?',
-      'Does this design shift control to those who need it most?',
-      'Whose values are centered in this solution?',
-      'What relationships are we nurturing through this design?',
-      'Are we healing or harming?',
-      'What stories are being told, and who gets to tell them?',
+    'Welsh Future Generations Framework': [
+      'Does this decision support long-term sustainability?',
+      'How are we involving people and communities meaningfully?',
+      'Have we considered the impact on well-being in Wales now and in the future?',
+      'Does our design serve current and future generations equally?',
+      'Are we addressing all seven well-being goals?',
+      'Are we working across silos in collaborative ways?',
+    ],
+    'Placemaking Wales Guide': [
+      'Is this place designed with and for the local community?',
+      'How does this design create a sense of belonging and identity?',
+      'Are we considering both function and beauty in the space?',
+      'How do public spaces reflect shared values and heritage?',
+      'Is the place welcoming, safe, and accessible for everyone?',
+      'Are we nurturing stewardship and care for this place over time?',
+    ],
+    'Scottish Place Principle': [
+      'Are all stakeholders collaborating with shared purpose in this place?',
+      'Have we aligned with local ambitions and community aspirations?',
+      'How does this design contribute to inclusive economic and social outcomes?',
+      'Are we designing for joined-up service delivery and shared outcomes?',
+      'Are we strengthening community voice and local decision-making?',
+      'Does the approach respect the distinctiveness of place and culture?',
+    ],
+    'Sustainable Design Frameworks': [
+      'What environmental impact does this design have across its lifecycle?',
+      'Are we using resources wisely and regeneratively?',
+      'Is this design resilient to future ecological and societal changes?',
+      'Have we minimized waste and maximized circularity?',
+      'Are we supporting planetary health as part of human health?',
+      'Is this design aligned with global climate and biodiversity targets?',
     ],
     'Trauma-Informed Design': [
-      'Does this design promote safety, not just for users, but for the team too?',
-      'Are we prioritizing choice, voice, and autonomy at every step?',
-      'How are we addressing past harms — not just present needs?',
-      'Are we making assumptions about resilience or healing?',
-      'Have we created emotional escape hatches for intense interactions?',
-      'Does this service feel predictable and trustworthy?',
-      'Are we designing in ways that acknowledge systemic trauma?',
-      'What healing practices are we integrating into the design process?',
+      'Does this environment promote emotional safety and autonomy?',
+      'How are we accounting for people with lived experiences of trauma?',
+      'Are we building trust, choice, and empowerment into the service?',
+      'Is the design sensitive to potential triggers in the environment?',
+      'How are staff trained to recognize and respond to trauma?',
+      'Are we co-designing with those who have experienced trauma directly?',
+    ],
+    'Design Justice Principles': [
+      'Who is missing from the design table, and why?',
+      'How does this design redistribute power or reinforce injustice?',
+      'Are we valuing collective wisdom over technocratic expertise?',
+      'Whose voices are centered, and whose are marginalized?',
+      'Is our process accountable to the communities it affects?',
+      'Are we designing for liberation, not assimilation?',
     ],
   };
 
@@ -94,7 +120,7 @@ const OneGoodQuestion = () => {
     const category = categories[0];
     const questionList = shuffleArray(questions[category]);
     const question = questionList[0];
-    const source = sources[category] || '';
+    const source = '';
 
     setQuestionData({category, question, source});
   };
@@ -102,7 +128,10 @@ const OneGoodQuestion = () => {
   return (
     <div className="grow flex flex-col items-center justify-center bg-[#fdf9f3] px-4 text-center text-[#1e1e1e]">
       <Button
-        className="text-xl md:text-2xl px-12 py-6 mb-10 rounded-full shadow-lg font-bold bg-[#1e1e1e] text-white hover:scale-105 transition-transform active:scale-100"
+        className="text-xl md:text-2xl px-12 py-6 mb-10 rounded-full shadow-lg font-bold text-white hover:scale-105 transition-transform active:scale-100"
+        style={{
+          background: 'radial-gradient(circle, #1e40af 30%, #059669 50%, #1e40af 100%)'
+        }}
         onClick={showRandomQuestion}
         variant={'primary'}
         size={'lg'}
@@ -114,7 +143,7 @@ const OneGoodQuestion = () => {
         <CardContent className="">
           {questionData.category && (
             <div className="text-sm text-gray-500 mb-2">
-              🧠 {questionData.category}
+              {getCategoryEmoji(questionData.category)} {questionData.category}
             </div>
           )}
           <div>{questionData.question}</div>
