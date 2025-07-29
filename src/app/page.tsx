@@ -1,16 +1,14 @@
-import Head from 'next/head';
+import type {Metadata} from 'next';
 import OneGoodQuestion from '@/components/OneGoodQuestion';
+
+export const metadata: Metadata = {
+  title: 'Remix the system',
+  description: 'A reflective tool for systems-thinking questions',
+};
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Ask the system</title>
-        <meta
-          name="description"
-          content="A reflective tool for systems-thinking questions"
-        />
-      </Head>
       <div className="flex flex-col min-h-screen">
         <main className="grow flex flex-col">
           <OneGoodQuestion />
